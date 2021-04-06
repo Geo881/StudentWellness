@@ -1,0 +1,13 @@
+This text file contain information of where to place each files:
+All configuration should work off the bat.
+
+
+1) 000-default.conf(config file for the flask application)
+place in:  /etc/apache2/sites-available
+
+2)apache2.conf(apache configuration file)
+place in: /etc/apache
+
+
+3)studentwellnessflask(project folder)
+place in: /var/www/html

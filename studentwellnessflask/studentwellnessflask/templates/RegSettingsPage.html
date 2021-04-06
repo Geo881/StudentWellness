@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/SignIn.css')}}">
+    <div class = "CCSU">
+         <img src="{{ url_for('static', filename='/Images/CCSULogo.svg') }}" name="CCSULogo" alt="CCSU Logo" width="500">
+   </div>
+  <head>
+  <body class = "AdminPage">
+    <form action="ResetPass_page.php">
+      <div class="container">
+          <h1>Account Settings</h1>
+          <hr>
+
+          <label for="username":>Username: {{UsernameDisplay}} </label>
+          <br>
+          <br>
+          <label for="email": name="EmailDisplay">Email: {{EmailDisplay}} </label>
+          <hr>
+          <a href="/ChangePass">Change Password</a>
+			
+	</form>
+      </div>
+
+    
+    </form>
+  <body>
+    <hr>
+    <footer>
+        <!--© 2020 CENTRAL CONNECTICUT STATE UNIVERSITY-->
+			&#169; <script type="text/javascript">var theDate=new Date();document.write(theDate.getFullYear())</script> CENTRAL CONNECTICUT STATE UNIVERSITY
+    <footer>
+<html>

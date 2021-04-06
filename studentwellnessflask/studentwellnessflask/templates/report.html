@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/report.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/RegistrationCSS.css') }}">
+</head>
+
+<div class = "CCSU">
+    <a href="https://web.ccsu.edu/healthservices/oade/"> <!-- target _blank opens in new tab-->
+        <img src="{{ url_for('static', filename='/Images/CCSULogo.svg') }}" name="CCSULogo" alt="CCSU Logo" id="CCSUPic" width="500">
+    </a>
+  </div>
+
+<body class = "registrationForm">
+	
+	
+	<nav class="navbar navbar-default">
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/RegSettings">Account Settings</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/logOut"> Logout</a></li>
+            </ul>
+          </div>
+	</nav>
+
+
+      
+      
+	      {% with messages = get_flashed_messages()%}
+	      	{% if messages %}
+			{% for message in messages %}
+				<div class="alert alert-warning">
+					{{ message }}
+				</div>
+			{% endfor %}
+		{% endif %}
+	      {% endwith %}
+
+
+
+	    <!--</form>-->
+    <hr>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div class="col-xs-6" style="float:left;" >
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart"></canvas>
+            </div>
+        </div>
+       <div class="col-xs-6" style="float:left;" >
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart10"></canvas>
+            </div>
+       </div> 
+
+        <div class="col-xs-6" style="float:left;">
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart9"></canvas>
+            </div>
+        </div>
+        <br style="clear: left;" />
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <div class="container">
+        <div class="col-xs-6" style="float:left;" >
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart1"></canvas>
+            </div>
+        </div>
+       <div class="col-xs-6" style="float:left;" >
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart2"></canvas>
+            </div>
+       </div> 
+
+        <div class="col-xs-6" style="float:left;">
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart3"></canvas>
+            </div>
+        </div>
+        <br style="clear: left;" />
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div class="col-xs-6" style="float:left;" >
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart4"></canvas>
+            </div>
+        </div>
+       <div class="col-xs-6" style="float:left;" >
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart5"></canvas>
+            </div>
+       </div> 
+
+        <div class="col-xs-6" style="float:left;">
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart6"></canvas>
+            </div>
+        </div>
+        <br style="clear: left;" />
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div class="col-xs-6" style="float:left;" >
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart7"></canvas>
+            </div>
+        </div>
+	<div class="col-xs-6" style="float:left;" >
+            <div class="chart-container" style="position: relative; height:20vh; width:30vw">
+                <canvas id="pie-chart8"></canvas>
+            </div>
+       </div> 
+
+
+
+        <br style="clear: left;" />
+    </div>
+    
+    
+    
+    <form action="" method="post">
+	    <div class="container">  
+		    <br>
+		    <br>
+		    <br>
+		    <button type="submit" class="SignInbtn" name="onOffCampus" value="offCampus">Show Off-Campus Data</button>
+		    <button type="submit" class="SignInbtn" name="onOffCampus" value="onCampus">Show On-Campus Data</button>
+		    <button type="submit" class="SignInbtn" name="onOffCampus" value="aggregate">Aggregate Data</button>
+		    <br>
+		    <br>
+		    <br>
+		    <label> 
+			    <b>Delete Recorded Data</b>
+		    </label><br> 
+		    <label for="psw"><b>Password</b></label>
+		    <input type="password" id="psw" placeholder="Enter Password" name="psw">
+		    <label for="psw-repeat"><b>Re-enter Password</b></label>
+		    <input type="password" id="psw-repeat" placeholder="Re-enter Password" name="psw-repeat">
+		    <!--<a href="/ResetWellness">Delete Data</a>-->
+		    <button type="submit" class="SignInbtn" name="onOffCampus" value="delete"  >Delete Data</button>
+		    <br>
+		    <br>
+		    <br>
+
+
+
+	    </div>
+    </form>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart"), {
+        type: 'pie',
+        data: {
+            labels: ["Amount"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd"],
+                data: {{g1Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Registered Student'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = meta.total;
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart1"), {
+        type: 'pie',
+        data: {
+            labels: ["Well","Neutral","Not-Well"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#cd3ea2","#3ecd5d","#cd8a3e"],
+                data: {{g2Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Social'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = 0;
+                        {%for item in g2Data%}
+                            total += {{item}}
+                        {% endfor %}
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart2"), {
+        type: 'pie',
+        data: {
+            labels: ["Well","Neutral","Not-Well"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#cd3ea2","#3ecd5d","#cd8a3e"],
+                data: {{g3Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Environment'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = 0;
+                        {%for item in g3Data%}
+                            total += {{item}}
+                        {% endfor %}
+
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart3"), {
+        type: 'pie',
+        data: {
+            labels: ["Well","Neutral","Not Well"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                data: {{g4Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Spiritual'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = 0;
+                        {%for item in g4Data%}
+                            total += {{item}}
+                        {% endfor %}
+
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart4"), {
+        type: 'pie',
+        data: {
+            labels: ["Well","Neutral","Not Well"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                data: {{g5Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Emotional'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = 0;
+                        {%for item in g5Data%}
+                            total += {{item}}
+                        {% endfor %}
+
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart5"), {
+        type: 'pie',
+        data: {
+            labels: ["Well","Neutral","Not Well"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                data: {{g6Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Occupational'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = 0;
+                        {%for item in g6Data%}
+                            total += {{item}}
+                        {% endfor %}
+
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart6"), {
+        type: 'pie',
+        data: {
+            labels: ["Well","Neutral","Not Well"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                data: {{g7Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Physical'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = 0;
+                        {%for item in g7Data%}
+                            total += {{item}}
+                        {% endfor %}
+
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart7"), {
+        type: 'pie',
+        data: {
+            labels: ["Well","Neutral","Not Well"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                data: {{g8Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Financial'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = 0;
+                        {%for item in g8Data%}
+                            total += {{item}}
+                        {% endfor %}
+
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart8"), {
+        type: 'pie',
+        data: {
+            labels: ["Well","Neutral","Not Well"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                data: {{g9Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Intellectual'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = 0;
+                        {%for item in g9Data%}
+                            total += {{item}}
+                        {% endfor %}
+
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart9"), {
+        type: 'pie',
+        data: {
+            labels: ["On-Campus","Off-Campus"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                data: {{g10Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Living Situation'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = 0;
+                        {%for item in g10Data%}
+                            total += {{item}}
+                        {% endfor %}
+
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+    <script>
+
+
+    new Chart(document.getElementById("pie-chart10"), {
+        type: 'pie',
+        data: {
+            labels: ["Amount"],
+            datasets: [{
+                label: "",
+                backgroundColor: ["#3e95cd"],
+                data: {{g11Data}}
+            }]
+        },
+
+        options: {
+            title: {
+                display: true,
+                text: 'Wellness Session Count'
+            },
+            legend:{
+                position: 'left'
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+                        var total = meta.total;
+                        var currentValue = dataset.data[tooltipItem.index];
+                        var percentage = parseFloat((currentValue/total*100).toFixed(1));
+                        return currentValue + ' (' + percentage + '%)';
+                    },
+                    title: function(tooltipItem, data) {
+                        return data.labels[tooltipItem[0].index];
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+.tooltip{
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 400px;
+    left: 300%;
+    background-color: dodgerblue;
+    color: #000;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border-color: black;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    visibility: visible;
+}
+
+/*popover? dont really work, if you place it on right side of the screen, you cant keep your mouse over it to click on stuff*/
+/*a {
+  text-decoration: none;
+}
+
+.popoverTitleSW {
+  font-size: 24px;
+  line-height: 36px;
+  text-decoration: none;
+  color: rgb(228, 68, 68);
+  text-align: center;
+  padding: 15px 0;
+}
+
+.popoverWrapperSW {
+  position: relative;
+  margin-top: 1.5rem;
+  display: inline-block;
+}
+.popoverContentSW {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 300%;
+  transform: translate(0, 10px);
+  background-color: #bfbfbf;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  width: auto;
+}
+.popoverContentSW:before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  right: calc(50% - 10px);
+  top: -8px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #bfbfbf transparent;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.popoverWrapperSW:hover .popoverContentSW {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -20px);
+  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+.popoverMessageSW {
+  text-align: center;
+}*/
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+footer{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  color: #5588bb;
+  line-height: normal;
+}
+
+.CCSU{
+  text-align: center;
+  background-color: #1E4164;
+}
+/* social wellness radio button*/
+.radio-sw{
+    margin: 10px;
+}
+
+.radio-sw input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-sw label{
+    display: inline-block;
+    background-color: #FD51BB;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #7e014e;
+    border-radius: 4px;
+}
+
+.radio-sw label: hover {
+    background-color: #dfd;
+}
+
+.radio-sw input[type="radio"]:focus + label{
+    border: 2px dashed #7e014e;
+}
+
+.radio-sw input[type="radio"]: checked + label{
+    background-color: #fd1ca6;
+    border-color: #7e014e;
+}
+
+/* Physical Wellness radio button*/
+.radio-pw{
+    margin: 10px;
+}
+
+.radio-pw input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-pw label{
+    display: inline-block;
+    background-color: #FA7800;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #803e00;
+    border-radius: 4px;
+}
+
+.radio-pw label: hover {
+    background-color: #dfd;
+}
+
+.radio-pw input[type="radio"]:focus + label{
+    border: 2px dashed #803e00;
+}
+
+.radio-pw input[type="radio"]: checked + label{
+    background-color: #fd1ca6;
+    border-color: #803e00;
+}
+
+/* Intellectual Wellness radio button*/
+.radio-iw{
+    margin: 10px;
+}
+
+.radio-iw input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-iw label{
+    display: inline-block;
+    background-color: #F8FD00;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #7d8000;
+    border-radius: 4px;
+}
+
+.radio-iw label: hover {
+    background-color: #dfd;
+}
+
+.radio-iw input[type="radio"]:focus + label{
+    border: 2px dashed #7d8000;
+}
+
+.radio-iw input[type="radio"]: checked + label{
+    background-color: #fd1ca6;
+    border-color: #7d8000;
+}
+
+/* Financial Wellness radio button*/
+.radio-fw{
+    margin: 10px;
+}
+
+.radio-fw input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-fw label{
+    display: inline-block;
+    background-color: #00AF4B;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #008037;
+    border-radius: 4px;
+}
+
+.radio-fw label: hover {
+    background-color: #dfd;
+}
+
+.radio-fw input[type="radio"]:focus + label{
+    border: 2px dashed #008037;
+}
+
+.radio-fw input[type="radio"]: checked + label{
+    background-color: #fd1ca6;
+    border-color: #008037;
+}
+
+/* Spiritual Wellness radio button*/
+.radio-spw{
+    margin: 10px;
+}
+
+.radio-spw input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-spw label{
+    display: inline-block;
+    background-color: #A259F4;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #3c0878;
+    border-radius: 4px;
+}
+
+.radio-spw label: hover {
+    background-color: #dfd;
+}
+
+.radio-spw input[type="radio"]:focus + label{
+    border: 2px dashed #3c0878;
+}
+
+.radio-spw input[type="radio"]: checked + label{
+    background-color: #fd1ca6;
+    border-color: #3c0878;
+}
+
+/* Emotional Wellness radio button*/
+.radio-ew{
+    margin: 10px;
+}
+
+.radio-ew input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-ew label{
+    display: inline-block;
+    background-color: #0088cc;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #3c0878;
+    border-radius: 4px;
+}
+
+.radio-ew label: hover {
+    background-color: #dfd;
+}
+
+.radio-ew input[type="radio"]:focus + label{
+    border: 2px dashed #3c0878;
+}
+
+.radio-ew input[type="radio"]: checked + label{
+    background-color: #fd1ca6;
+    border-color: #3c0878;
+}
+
+/* Environmental Wellness radio button*/
+.radio-enw{
+    margin: 10px;
+}
+
+.radio-enw input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-enw label{
+    display: inline-block;
+    background-color: #A8641E;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #6c4013;
+    border-radius: 4px;
+}
+
+.radio-enw label: hover {
+    background-color: #dfd;
+}
+
+.radio-enw input[type="radio"]:focus + label{
+    border: 2px dashed #6c4013;
+}
+
+.radio-enw input[type="radio"]: checked + label{
+    background-color: #fd1ca6;
+    border-color: #6c4013;
+}
+
+/* Occupational Wellness radio button*/
+.radio-ow{
+    margin: 10px;
+}
+
+.radio-ow input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-ow label{
+    display: inline-block;
+    background-color: #38B6FF;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #005180;
+    border-radius: 4px;
+}
+
+.radio-ow label: hover {
+    background-color: #dfd;
+}
+
+.radio-ow input[type="radio"]:focus + label{
+    border: 2px dashed #005180;
+}
+
+.radio-ow input[type="radio"]: checked + label{
+    background-color: #fd1ca6;
+    border-color: #005180;
+}

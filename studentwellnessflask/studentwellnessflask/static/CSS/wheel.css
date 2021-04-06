@@ -1,0 +1,129 @@
+.navbar-brand{
+  position:absolute;
+  left:0;
+  top:0;
+ }
+.container-fluid{
+  width: 1200px;
+  margin: 0 auto;
+  height: 125px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #1E4164;/*#002b80;*/
+}
+
+#container1a {
+  width: 90%;
+  height: 75%;
+  border: 1px dotted #ddd;
+  margin: 1em auto;
+  pointer-events: auto;
+  background-color: #3C7AB8;
+}
+
+#container1b {
+  width: 90%;
+  height: 20%;
+  border: 1px dotted #ddd;
+  margin: 1em auto;
+  background-color: #3C7AB8;
+}
+
+#containerTooltip {
+  width: 100%;
+  height: 85%;
+  border: 1px dotted #ddd;
+}
+
+#containerSubmit {
+  width: 100%;
+  height: 15%;
+  text-align: center;
+}
+
+#container2a {
+  width: 90%;
+  height: 50%;
+  border: 1px dotted #ddd;
+  margin: 1em auto;
+  pointer-events: auto;
+  background-color: #3C7AB8;
+}
+
+#container2b {
+  width: 90%;
+  height: 500px;
+  border: 1px dotted #ddd;
+  margin: 1em auto;
+  background-color: #3C7AB8;
+}
+
+#containerResources{
+    width: 100%;
+    height: 450px;
+    overflow-y: auto;
+    border: 1px dotted #ddd;
+}
+
+#containerBack{
+    width: 100%;
+    height: 15%;
+    text-align: center;
+}
+
+#buttonSub{
+    border-radius: 4px;
+    background-color: lightgray;
+}
+
+#buttonBack{
+    border-radius: 4px;
+    background-color: lightgray;
+}
+#buttonSure{
+    border-radius: 4px;
+    background-color: lightgray;
+}
+#buttonNotSure{
+    border-radius: 4px;
+    background-color: lightgray;
+}
+
+p{
+    font-size: large;
+    color:white;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+footer{
+  text-align: center;
+    height: 5%
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  color: #5588bb;
+  line-height: normal;
+}
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+

@@ -1,0 +1,129 @@
+<!-- This is the HTML file  -->
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" 
+    href="{{ url_for('static', filename='stylesheets/ChangeWheel.css')}}">
+    <div class = "CCSU">
+      <a href="https://web.ccsu.edu/healthservices/oade/"> <!-- target _blank opens in new tab-->
+          <img src="{{ url_for('static', filename='/Images/CCSULogo.svg') }}" name="CCSULogo" alt="CCSU Logo" id="CCSUPic" width="500">
+      </a>
+   </div>
+  <head>
+  <body class = "ChangeWheel">
+    
+    <form action="" method = "GET"></form>
+ 
+    <form action=""  method = "POST">
+      <div class="container">
+          <h1>Wheel Resources</h1>
+          <hr>
+          <label for="SocialResources"><b>Social Wellness Resources</b></label>
+          <br>
+          <textarea type="text" placeholder="" name="SocialResources" rows="6" cols="100">{{SocialResources}} </textarea>
+          <br>
+          <br>
+
+          <label for="SocialLinks"><b>Social Resource Links</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="SocialLinks" rows="6" cols="100">{{SocialLinks}}</textarea>
+          <br>
+          <br>
+
+          <label for="PhysicalResources"><b>Physical Wellness Resources</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="PhysicalResources" rows="6" cols="100">{{PhysicalResources}}</textarea>
+          <br>
+          <br>
+
+          <label for="PhysicalLinks"><b>Physical Resource Links</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="PhysicalLinks" rows="6" cols="100">{{PhysicalLinks}}</textarea>
+          <br>
+          <br>
+
+          <label for="IntellectualResources"><b>Intellectual Wellness Resources</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="IntellectualResources" rows="6" cols="100">{{IntellectualResources}}</textarea>
+          <br>
+          <br>
+
+          <label for="IntellectualLinks"><b>Intellectual Resource Links</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="IntellectualLinks" rows="6" cols="100">{{IntellectualLinks}}</textarea>
+          <br>
+          <br>
+
+          <label for="FinancialResources"><b>Financial Wellness Resources</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="FinancialResources" rows="6" cols="100">{{FinancialResources}}</textarea>
+          <br>
+          <br>
+
+          <label for="FinancialLinks"><b>Financial Resource Links</b></label>
+          <br>
+          <textarea tpe="text" placeholder="Get current text" name="FinancialLinks" rows="6" cols="100">{{FinancialLinks}}</textarea>
+          <br>
+          <br>
+
+          <label for="SpiritualResources"><b>Spiritual Wellness Resources</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="SpiritualResources" rows="6" cols="100">{{SpiritualResources}}</textarea>
+          <br>
+          <br>
+
+          <label for="SpiritualLinks"><b>Spiritual Resource Links</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="SpiritualLinks" rows="6" cols="100">{{SpiritualLinks}}</textarea>
+          <br>
+          <br>
+
+          <label for="EmotionalResources"><b>Emotional Wellness Resources</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="EmotionalResources" rows="6" cols="100">{{EmotionalResources}}</textarea>
+          <br>
+          <br>
+
+          <label for="EmotionalLinks"><b>Emotional Resource Links</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="EmotionalLinks" rows="6" cols="100">{{EmotionalLinks}}</textarea>
+          <br>
+          <br>
+
+          <label for="EnvironmentalResources"><b>Environmental Wellness Resources</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="EnvironmentalResources" rows="6" cols="100">{{EnvironmentalResources}}</textarea>
+          <br>
+          <br>
+
+          <label for="EnvironmentalLinks"><b>Environmental Resource Links</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="EnvironmentalLinks" rows="6" cols="100">{{EnvironmentalLinks}}</textarea>
+          <br>
+          <br>
+
+          <label for="OccupationalResources"><b>Occupational Wellness Resources</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="OccupationalResources" rows="6" cols="100">{{OccupationalResources}}</textarea>
+          <br>
+          <br>
+
+          <label for="OccupationalLinks"><b>Occupational Resource Links</b></label>
+          <br>
+          <textarea type="text" placeholder="Get current text" name="OccupationalLinks" rows="6" cols="100">{{OccupationalLinks}}</textarea>
+          <br>
+          <br>
+
+          <hr>
+          <button type="submit" class="ResourceSubmitButton">Submit Changes</button>
+      </div>
+    </form> 
+
+  <body>
+    <hr>
+    <footer>
+        <!--© 2020 CENTRAL CONNECTICUT STATE UNIVERSITY-->
+			&#169; <script type="text/javascript">var theDate=new Date();document.write(theDate.getFullYear())</script> CENTRAL CONNECTICUT STATE UNIVERSITY
+    <footer>
+<html>

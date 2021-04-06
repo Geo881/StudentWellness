@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/ResetPass.css') }}">
+    <div class = "CCSU">
+      <a href="https://web.ccsu.edu/healthservices/oade/"> <!-- target _blank opens in new tab-->
+          <img src="{{ url_for('static', filename='/Images/CCSULogo.svg') }}" name="CCSULogo" alt="CCSU Logo" id="CCSUPic" width="500">
+      </a>
+   </div>
+  <head>
+  <body class = "ResetPassword">
+    <form  method="post">
+        <!--<form action="Reset_page.php">-->
+      <div class="container">
+          <h1>Reset Password</h1>
+          <hr>
+
+          <label for="Email"><b>Email</b></label>
+          <br>
+          <input type="email" placeholder="Enter email here" name="email" required>
+          <hr>
+          <button type="submit" class="PasswordResetbtn">Reset Password</button>
+      </div>
+      <div class="container ResetPass">
+        <p>Go back to <a href="/SignIn">Sign In</a>.</p>
+      </div>
+    </form>
+  <body>
+    <hr>
+    <footer>
+        <!--© 2020 CENTRAL CONNECTICUT STATE UNIVERSITY-->
+			&#169; <script type="text/javascript">var theDate=new Date();document.write(theDate.getFullYear())</script> CENTRAL CONNECTICUT STATE UNIVERSITY
+    <footer>
+<html>

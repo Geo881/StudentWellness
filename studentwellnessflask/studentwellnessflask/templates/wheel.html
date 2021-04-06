@@ -1,0 +1,64 @@
+<html>
+    <head>    
+        <!--css-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/wheel.css')}}">
+        <!--js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+        <script src="{{ url_for('static', filename='js/wheel.js')}}"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    
+  <body>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="https://www.ccsu.edu/wellnesseducation" target="_blank">
+                  <img src="{{ url_for('static', filename='/Images/bluewellness_logo_black_text.png') }}"  width="125" alt="" class="d-inline-block align-middle mr-2">
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/RegSettings">Account Settings</a></li>
+		<li><a href="/about">About Us</a></li>
+                <li><a href="/logOut"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+          </div>
+      </nav>
+
+
+    <div id="container1a" data-username = "{{username}}" data-responses = "{{responses}}" data-resources = "{{values}}" data-links = "{{links}}"></div>
+      
+    <div id="container1b">
+        <div id = "containerTooltip"></div>
+        <div id = "containerSubmit">
+            <button id = "buttonSub" onclick = "firstSubmit()">Submit</button>
+            <form method = "POST">
+                <button id = "buttonSure" name = "sure" value = "">Yes, I'm sure</button>
+            </form>
+            <button id = "buttonNotSure" onclick = "notSure()">No, Let me go back</button>
+        </div>
+    </div>
+      
+    <div id="container2a"></div>
+      
+    <div id="container2b">
+        <div id = "containerResources"></div>
+        <div id = "containerBack">
+            <button id = "buttonBack" onclick = "goBack()">Back</button>
+        </div>
+      </div>
+
+
+</body>
+    <hr>
+    <footer>
+        <!--© 2020 CENTRAL CONNECTICUT STATE UNIVERSITY-->
+			&#169; <script type="text/javascript">var theDate=new Date();document.write(theDate.getFullYear())</script> CENTRAL CONNECTICUT STATE UNIVERSITY
+    </footer>
+</html>
